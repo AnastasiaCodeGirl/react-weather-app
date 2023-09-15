@@ -6,7 +6,7 @@ function App() {
       <h1>Weather App</h1>
             <footer>
               This project was coded by Anastasiia Shumeiko and is {" "}
-            <a href="https://github.com/AnastasiaCodeGirl/react-weather-app" target="_blank">open-sourced on GitHub</a> 
+            <a href="https://github.com/AnastasiaCodeGirl/react-weather-app" target="_blank" rel="noreferrer">open-sourced on GitHub</a> 
             
             </footer>
     </div>
