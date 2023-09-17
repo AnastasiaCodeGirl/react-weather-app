@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 import "./Weather.css";
+import { Hourglass } from 'react-loader-spinner'
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
-    const [ready, setReady] = useState(false);
     const [weatherData, setWeatherData] =useState({ready: false});
     function handleResponse(response){
-        console.log(response.data);
         setWeatherData({
             temperature: response.data.temperature.current,
             description: response.data.condition.description,
             wind: response.data.wind.speed,
-            date: "Wednesday 03:15",
+            date: new Date(response.data.time * 1000),
             city: response.data.city,
             humidity: response.data.temperature.humidity,
             icon: response.data.condition.icon_url,
@@ -39,7 +39,9 @@ export default function Weather(props) {
           </form>
         
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date}/>
+            </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
@@ -69,6 +71,14 @@ export default function Weather(props) {
         let city= "London";
         let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
-        return "Loading...";
+        return <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        colors={['#306cce', '#72a1ed']}
+        />;
     }
 }
