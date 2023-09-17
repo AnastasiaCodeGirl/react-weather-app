@@ -71,7 +71,6 @@ export default function Weather(props) {
     }
     else{
         const apiKey="fed24a4a3934t32fo5a63bbe36a70167";
-        let city= "London";
         let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
         return <Hourglass
