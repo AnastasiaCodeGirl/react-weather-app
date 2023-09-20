@@ -24,10 +24,10 @@ export default function WeatherForecastDay(props){
           </div>
           <div className="forecastTemperature">
             <span className="forecastTemperatureMax">
-              {Math.round(props.data.temperature.maximum)}
+              {Math.round(props.data.temperature.maximum)}°C
             </span>
             <span className="forecastTemperatureMin">
-              {Math.round(props.data.temperature.minimum)}
+              {Math.round(props.data.temperature.minimum)}°C
             </span>
           </div>
         </div>);

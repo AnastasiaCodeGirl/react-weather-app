@@ -1,7 +1,7 @@
 .WeatherForecastDay{
     text-align: center;
 }
-.forecastTemperature.forecastTemperatureMin{
+.forecastTemperature .forecastTemperatureMin{
     opacity: 0.6;
     margin-left: 5px;
 }
