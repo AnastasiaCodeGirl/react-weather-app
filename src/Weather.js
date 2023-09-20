@@ -27,6 +27,11 @@ export default function Weather(props) {
     function handleCityChange(event){
       setCity(event.target.value);
     }
+    function search(){
+      const apiKey="fed24a4a3934t32fo5a63bbe36a70167";
+        let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+    }
 
     if(weatherData.ready)
     {
@@ -50,9 +55,7 @@ export default function Weather(props) {
           <WeatherForecast city={weatherData.city} />
           </div>);}
     else{
-        const apiKey="fed24a4a3934t32fo5a63bbe36a70167";
-        let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(handleResponse);
+        search();
         return <Hourglass
         visible={true}
         height="80"

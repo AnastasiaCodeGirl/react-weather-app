@@ -13,8 +13,8 @@ export default function WeatherForecastDay(props){
       }
     return(
        
-          <div className="forecastDay">
-            <div className="WeatherForecastDay">{day()}</div>
+        
+            <div className="WeatherForecastDay">{day()}
           <div>
             <img
               src={props.data.condition.icon_url}
@@ -24,11 +24,12 @@ export default function WeatherForecastDay(props){
           </div>
           <div className="forecastTemperature">
             <span className="forecastTemperatureMax">
-              {Math.round(props.data.temperature.maximum)}°C
+              {Math.round(props.data.temperature.maximum)}°
             </span>
             <span className="forecastTemperatureMin">
-              {Math.round(props.data.temperature.minimum)}°C
+              {Math.round(props.data.temperature.minimum)}°
             </span>
           </div>
-        </div>);
+          </div>
+        );
 }
