@@ -1,4 +1,5 @@
 import React from "react";
+import "./WeatherForecastDay.css"
 
 export default function WeatherForecastDay(props){
     
@@ -13,7 +14,7 @@ export default function WeatherForecastDay(props){
     return(
        
           <div className="forecastDay">
-            <div className="WeatherForecast-day">{day()}</div>
+            <div className="WeatherForecastDay">{day()}</div>
           <div>
             <img
               src={props.data.condition.icon_url}
